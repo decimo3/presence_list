@@ -7,6 +7,8 @@ import face_recognition
 from result_model import Result
 #endregion imports
 
+TOLERANCE = 0.6
+
 # Convert the distance to a percentage accuracy
 def face_distance_to_confidence(face_distance, threshold=0.6):
   ''' Function to calculate percentage between faces diference '''
@@ -65,7 +67,7 @@ if __name__ == '__main__':
     json.dumps(
       Result(
         difference = accuracy,
-        is_match = accuracy < 0.6
+        is_match = accuracy < TOLERANCE
       )
     )
   )

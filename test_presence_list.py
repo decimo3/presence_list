@@ -1,7 +1,5 @@
 """ Test face recognition script """
-from presence_list import compare_image_faces
-
-TOLERANCE = 0.5
+from presence_list import compare_image_faces, TOLERANCE
 
 def test_images_with_same_face(monkeypatch, capsys):
   """ Test script with images os same person """
