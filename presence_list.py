@@ -68,7 +68,7 @@ if __name__ == '__main__':
     json.dumps(
       Result(
         difference = accuracy,
-        is_match = accuracy < is_match_check
+        is_match = is_match_check
       )
     )
   )
