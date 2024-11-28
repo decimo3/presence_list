@@ -2,7 +2,9 @@
 #region imports
 import os
 import sys
+import json
 import face_recognition
+from result_model import Result
 #endregion imports
 
 # Convert the distance to a percentage accuracy
@@ -58,8 +60,12 @@ if __name__ == '__main__':
 
   # Compare two files in arguments
   accuracy = compare_image_faces(sys.argv[1], sys.argv[2])
-  print(f'Similarity: {accuracy:.2f}')
-  if accuracy < 0.6:
-    print('It\'s a match!')
-  else:
-    print('Not a match.')
+  # Output the result as json string
+  print(
+    json.dumps(
+      Result(
+        difference = accuracy,
+        is_match = accuracy < 0.6
+      )
+    )
+  )
