@@ -45,7 +45,10 @@ if __name__ == '__main__':
     raise ValueError('The number of arguments is different from what was expected!')
 
   # Checks if all arguments are valid
-  for arg in sys.argv:
+  for i, arg in enumerate(sys.argv):
+    # Skipt first argument check
+    if i == 0:
+      continue
     if not os.path.exists(arg):
       raise FileNotFoundError(f'path {arg} on arguments are not valid!')
     if not os.path.isfile(arg):
