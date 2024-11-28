@@ -70,6 +70,6 @@ if __name__ == '__main__':
       Result(
         difference = accuracy,
         is_match = is_match_check
-      )
+      )._asdict()
     )
   )
