@@ -41,8 +41,8 @@ def compare_image_faces(imgpath_1: str, imgpath_2: str) -> int:
 
 if __name__ == '__main__':
   # Check if there are enough arguments
-  if len(sys.argv) < 3:
-    raise ValueError('There are no enough arguments.')
+  if len(sys.argv) != 3:
+    raise ValueError('The number of arguments is different from what was expected!')
 
   # Checks if all arguments are valid
   for arg in sys.argv:
