@@ -62,12 +62,13 @@ if __name__ == '__main__':
 
   # Compare two files in arguments
   accuracy = compare_image_faces(sys.argv[1], sys.argv[2])
+  is_match_check = 200 if accuracy < TOLERANCE else 400
   # Output the result as json string
   print(
     json.dumps(
       Result(
         difference = accuracy,
-        is_match = accuracy < TOLERANCE
+        is_match = accuracy < is_match_check
       )
     )
   )
