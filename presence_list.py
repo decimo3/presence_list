@@ -12,7 +12,7 @@ def face_distance_to_confidence(face_distance, threshold=0.6):
     return max(0, 100 - (face_distance / threshold) * 100)
   return min(100, (1.0 - face_distance / threshold) * 100)
 
-def compare_image_faces(imgpath_1: str, imgpath_2: str) -> int:
+def compare_image_faces(imgpath_1: str, imgpath_2: str) -> float:
   ''' Function that load two images and compare to find same face '''
   # Load known image (the reference image)
   known_image = face_recognition.load_image_file(imgpath_1)
